@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/cdf8aedde2.js" crossorigin="anonymous"></script>
+    <script src="scripts.js" defer></script>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div class="firstScreen">
+        <h1>Tic Tac Toe</h1>
+        <div class="playerNames">
+            <div class="player1">
+                <label for="p1Name">Player 1, what's your name?</label>
+                <input type="text" name="p1Name" id="p1Name">
+            </div>
+            <div class="player2">
+                <label for="p2Name">Player 2, what's your name?</label>
+                <input type="text" name="p2Name" id="p2Name">
+            </div>
+        </div>
+        <button id="startGameBtn">Start Playing</button>
+    </div>
+    <div class="secondScreen" style="display: none">
+        <div class="scoreTable">
+            <table>
+                <thead>
+                    <td>Player 1</td>
+                    <td>Player 2</td>
+                </thead>
+                <tr>
+                    <td id="p1Score">0</td>
+                    <td id="p2Score">0</td>
+                </tr>
+            </table>
+        </div>
+        <div class="gameboard">
+            <div class="cell"><i class="fa-solid fa-x"></i></div>
+            <div class="cell"><i class="fa-regular fa-circle"></i></div>
+            <div class="cell"><i class="fa-regular fa-circle"></i></div>
+            <div class="cell"><i class="fa-regular fa-circle"></i></div>
+            <div class="cell"><i class="fa-solid fa-x"></i></div>
+            <div class="cell"><i class="fa-regular fa-circle"></i></div>
+            <div class="cell"><i class="fa-solid fa-x"></i></div>
+            <div class="cell"><i class="fa-regular fa-circle"></i></div>
+            <div class="cell"><i class="fa-solid fa-x"></i></div>
+        </div>
+    </div>
+    <div class="winnerScreen" style="display: none">
+        <span class="winnerText">You win!</span>
+        <button id="restartGameBtn">Play Again</button>
+    </div>
+</body>
+</html>
