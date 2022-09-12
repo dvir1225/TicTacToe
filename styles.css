@@ -1,0 +1,168 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --cell-size: 100px;
+    --mark-size: calc(var(--cell-size) * 0.9)
+}
+body {
+    margin: 0;
+    font-family: roboto, sans-serif
+}
+
+.firstScreen {
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.firstScreen.show {
+    display: flex;
+}
+
+.firstScreen h1 {
+    font-size: 4rem;
+}
+
+.firstScreen h2 {
+    font-size: 2rem;
+}
+
+.playerNames {
+    font-size: 1.5rem;
+    display: flex;
+    gap: 30vw;
+}
+
+.player1,
+.player2 {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+label {
+    width: 50%;
+    text-align: center;
+}
+
+#p1Name,
+#p2Name {
+    font-size: 1.5rem;
+    padding: 7px 12px;
+    width: 50%;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px;
+    border: 2px solid black;
+}
+
+#startGameBtn {
+    margin-bottom: 25vh;
+    font-size: 2rem;
+    padding: 20px 40px;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 30px;
+}
+
+.secondScreen {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15vh
+}
+
+.secondScreen.show {
+    display: flex;
+}
+table {
+    margin-top: 8vh;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+.thead {
+    border-bottom: 1px solid black;
+}
+
+td {
+    width: 150px;
+    height: 50px;
+}
+
+tr :first-child {
+    border-right: 1px solid black;
+}
+
+.gameboard {
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+}
+
+.cell {
+    font-size: 5rem;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cell:not(.x):not(.circle):hover {
+    color: lightgrey
+}
+
+.tb {
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+.lr {
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+
+.winnerScreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.winnerScreen.show {
+    display: flex;
+}
+
+.winnerText {
+    color: white;
+    font-size: 6rem;
+}
+
+#restartGameBtn {
+    font-size: 3rem;
+    border: 2px solid black;
+    padding: 10px 20px;
+}
+
+#restartGameBtn:hover {
+    color: white;
+    background-color: black;
+    border-color: white;
+}
