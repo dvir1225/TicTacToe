@@ -73,6 +73,11 @@ label {
     border-radius: 30px;
 }
 
+#startGameBtn:hover {
+    background-color: black;
+    color:white;
+}
+
 .secondScreen {
     display: none;
     flex-direction: column;
@@ -84,6 +89,7 @@ label {
 .secondScreen.show {
     display: flex;
 }
+
 table {
     margin-top: 8vh;
     border-collapse: collapse;
@@ -119,7 +125,13 @@ tr :first-child {
 }
 
 .cell:not(.x):not(.circle):hover {
-    color: lightgrey
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.cell.x,
+.cell.circle{
+    cursor: not-allowed;
 }
 
 .tb {
@@ -165,4 +177,8 @@ tr :first-child {
     color: white;
     background-color: black;
     border-color: white;
+}
+
+button {
+    cursor: pointer;
 }
