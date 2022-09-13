@@ -16,6 +16,7 @@ const selectors = {
 }
 
 const Game = (() => {
+    let gameboard = [];
     selectors.startGameBtn.addEventListener('click', () =>{
         selectors.firstScreen.classList.remove('show')
         selectors.secondScreen.classList.add('show')
@@ -23,6 +24,7 @@ const Game = (() => {
         selectors.p2NameScoreTable.innerText = selectors.p2Name.value;
     })
 
+    
     const cellClasses = {
         x: 'x',
         circle: 'circle'
@@ -32,13 +34,13 @@ const Game = (() => {
         circle: '<i class="fa-regular fa-circle"></i>'
     }
 
-    let gameboard = [];
+    
     
     let circleTurn = false;
     selectors.gameboard.classList.add(cellClasses.x);
     let p1Score = 0;
     let p2Score = 0;
-    
+    getScore();
 
     const placeMark = (cell, currentClass) => {
         cell.classList.add(currentClass);
@@ -112,4 +114,18 @@ const Game = (() => {
         cell.addEventListener('click', handleClick, {once: true});
     })
 
+    selectors.restartGameBtn.addEventListener('click', () => {
+        selectors.winnerScreen.classList.remove('show');
+        circleTurn = false;
+        selectors.gameCells.forEach(cell => {
+            cell.classList.remove(cellClasses.x);
+            cell.classList.remove(cellClasses.circle);
+            cell.removeEventListener('click', handleClick);
+            cell.addEventListener('click', handleClick);
+            cell.innerHTML = '';
+        })
+        // selectors.gameCells.removeEventListener('click', handleClick);
+        // selectors.gameCells.addEventListener('click', handleClick);
+        gameboard = []
+    })
 })()
