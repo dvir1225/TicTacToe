@@ -17,6 +17,7 @@ const selectors = {
 
 const Game = (() => {
     let gameboard = [];
+    selectors.startGameBtn.classList.add('disabled')
     selectors.startGameBtn.addEventListener('click', () =>{
         selectors.firstScreen.classList.remove('show')
         selectors.secondScreen.classList.add('show')
@@ -76,7 +77,8 @@ const Game = (() => {
         if (draw){
             selectors.winnerText.innerText = "It's a draw!"
         } else {
-            selectors.winnerText.innerText = `${circleTurn ? "O's" : "X's"} Wins!`
+            selectors.winnerText.innerText =
+             `${circleTurn ? selectors.p2Name.value : selectors.p1Name.value} Wins!`
             circleTurn ? p2Score += 1 : p1Score += 1;
             getScore();
         }
@@ -124,8 +126,6 @@ const Game = (() => {
             cell.addEventListener('click', handleClick);
             cell.innerHTML = '';
         })
-        // selectors.gameCells.removeEventListener('click', handleClick);
-        // selectors.gameCells.addEventListener('click', handleClick);
         gameboard = []
     })
 })()
