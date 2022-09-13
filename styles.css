@@ -122,11 +122,13 @@ tr :first-child {
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 }
 
-.cell:not(.x):not(.circle):hover {
+.gameboard.x .cell:not(.x):not(.circle):hover,
+.gameboard.x .cell:not(.x):not(.circle):hover,
+.gameboard.circle .cell:not(.x):not(.circle):hover  {
     color: lightgrey;
-    cursor: pointer;
 }
 
 .cell.x,
@@ -162,7 +164,7 @@ tr :first-child {
     display: flex;
 }
 
-.winnerText {
+#winnerText {
     color: white;
     font-size: 6rem;
 }

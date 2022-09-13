@@ -7,53 +7,56 @@
     <link rel="stylesheet" href="styles.css">
     <script src="https://kit.fontawesome.com/cdf8aedde2.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
     <script src="scripts.js" defer></script>
     <title>Tic Tac Toe</title>
 </head>
 <body>
-    <div class="firstScreen">
+    <div class="firstScreen show">
         <h1>Tic Tac Toe</h1>
+        <h2>Please insert your names</h2>
         <div class="playerNames">
             <div class="player1">
-                <label for="p1Name">Player 1, what's your name?</label>
+                <label for="p1Name">Player 1</label>
                 <input type="text" name="p1Name" id="p1Name">
             </div>
             <div class="player2">
-                <label for="p2Name">Player 2, what's your name?</label>
+                <label for="p2Name">Player 2</label>
                 <input type="text" name="p2Name" id="p2Name">
             </div>
         </div>
-        <button id="startGameBtn">Start Playing</button>
+        <button type="submit" id="startGameBtn">Start Playing</button>
     </div>
-    <div class="secondScreen" style="display: none">
+    <div class="secondScreen">
         <div class="scoreTable">
             <table>
                 <thead>
-                    <td>Player 1</td>
-                    <td>Player 2</td>
+                    <tr>
+                        <td class="thead" id="p1NameValue"></td>
+                        <td class="thead" id="p2NameValue"></td>
+                    </tr>
                 </thead>
                 <tr>
-                    <td id="p1Score">0</td>
-                    <td id="p2Score">0</td>
+                    <td id="p1Score"></td>
+                    <td id="p2Score"></td>
                 </tr>
             </table>
         </div>
         <div class="gameboard">
-            <div class="cell"><i class="fa-solid fa-x"></i></div>
-            <div class="cell"><i class="fa-regular fa-circle"></i></div>
-            <div class="cell"><i class="fa-regular fa-circle"></i></div>
-            <div class="cell"><i class="fa-regular fa-circle"></i></div>
-            <div class="cell"><i class="fa-solid fa-x"></i></div>
-            <div class="cell"><i class="fa-regular fa-circle"></i></div>
-            <div class="cell"><i class="fa-solid fa-x"></i></div>
-            <div class="cell"><i class="fa-regular fa-circle"></i></div>
-            <div class="cell"><i class="fa-solid fa-x"></i></div>
+            <div class="cell"></div>
+            <div class="cell lr"></div>
+            <div class="cell"></div>
+            <div class="cell tb"></div>
+            <div class="cell tb lr"></div>
+            <div class="cell tb"></div>
+            <div class="cell"></div>
+            <div class="cell lr"></div>
+            <div class="cell"></div>
         </div>
     </div>
-    <div class="winnerScreen" style="display: none">
-        <span class="winnerText">You win!</span>
+    <div class="winnerScreen">
+        <span id="winnerText">'</span>
         <button id="restartGameBtn">Play Again</button>
     </div>
 </body>
