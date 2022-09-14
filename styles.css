@@ -204,6 +204,12 @@ button {
         margin-top: 50px;
         margin-bottom: 100px;
     }
+    #winnerText {
+        font-size: 4rem;
+    }
+    #restartGameBtn {
+        font-size: 2rem;
+    }
 }
 
 @media only screen and (min-width: 600px) {
